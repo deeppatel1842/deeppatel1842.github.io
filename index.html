@@ -6,13 +6,289 @@
     <title>Deep Patel | AI Engineer</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="styles.css" rel="stylesheet">
+    <style>
+        /* Google Fonts Import */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
+        :root {
+            --text-color: #212529;
+            --text-color-light: #6c757d;
+            --bg-color: #ffffff;
+            --border-color: #dee2e6;
+            --light-gray-bg: #f8f9fa;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            padding-top: 73px; /* Offset for fixed navbar */
+        }
+        
+        section {
+            padding: 100px 0;
+            border-bottom: 1px solid var(--border-color);
+            scroll-margin-top: 73px;
+        }
+        
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-color);
+            font-weight: 600;
+        }
+        
+        h2.section-title {
+            font-weight: 600;
+            font-size: 2.2rem;
+            margin-bottom: 4rem;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: var(--bg-color) !important;
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+        }
+        .navbar-brand {
+            font-weight: 600;
+            font-size: 1.5rem;
+            color: var(--text-color) !important;
+        }
+        .navbar-nav .nav-link {
+            color: var(--text-color) !important;
+            font-weight: 500;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        .navbar-nav .nav-link:hover {
+            color: var(--text-color-light) !important;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--bg-color);
+            color: var(--text-color);
+            padding: 120px 0;
+            text-align: center;
+        }
+        .hero h1 {
+            font-weight: 700;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+        .hero .lead {
+            font-size: 1.2rem;
+            color: var(--text-color-light);
+            max-width: 600px;
+            margin: 0 auto 2.5rem auto;
+        }
+        .hero .btn-outline-dark {
+            font-weight: 500;
+            padding: 10px 24px;
+            border-radius: 8px;
+            border-color: var(--border-color);
+            transition: all 0.3s ease;
+        }
+        .hero .btn-outline-dark:hover {
+            background-color: var(--text-color);
+            color: var(--bg-color);
+        }
+
+        /* About Section */
+        #about p {
+            font-size: 1.1rem;
+            color: var(--text-color-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Project Cards */
+        .project-card {
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            transition: border-color 0.3s ease, transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .project-card:hover {
+            border-color: var(--text-color);
+            transform: translateY(-5px);
+        }
+        .project-card .card-img-top {
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            border-top-left-radius: 11px;
+            border-top-right-radius: 11px;
+        }
+        .project-card .card-body {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .project-card .card-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+        }
+        .project-card .card-text {
+            color: var(--text-color-light);
+            flex-grow: 1;
+            margin-bottom: 1.5rem;
+        }
+        .project-tags .badge {
+            background-color: var(--light-gray-bg);
+            color: var(--text-color-light);
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+        }
+        .project-card .card-footer {
+            background: none;
+            border-top: 1px solid var(--border-color);
+            padding: 1rem 1.5rem;
+        }
+        .project-card .github-link {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .project-card .github-link:hover {
+            color: var(--text-color-light);
+        }
+        
+        /* Skills Section */
+        .skill-category {
+            margin-bottom: 3rem;
+        }
+        .skill-category h4 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        .skill-badges-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .skill-badge {
+            background-color: var(--light-gray-bg);
+            color: var(--text-color-light);
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            border: 1px solid var(--border-color);
+        }
+        
+        /* Certifications Section */
+        .cert-item {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .cert-item:last-child {
+            border-bottom: none;
+        }
+        .cert-item i {
+            color: var(--text-color-light);
+            margin-right: 15px;
+        }
+        
+        /* Contact Form */
+        #contact .form-control {
+            border-radius: 8px;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+        }
+        #contact .form-control:focus {
+            border-color: var(--text-color);
+            box-shadow: none;
+        }
+        #contact .btn-outline-dark {
+            width: 100%;
+            padding: 12px;
+            font-weight: 500;
+            border-radius: 8px;
+        }
+        .direct-email {
+            margin-top: 2rem;
+            color: var(--text-color-light);
+        }
+        .direct-email a {
+            color: var(--text-color);
+            font-weight: 500;
+            text-decoration: none;
+        }
+        .direct-email a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 0;
+            text-align: center;
+        }
+        footer .social-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 1.5rem;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+        footer .social-links a:hover {
+            color: var(--text-color-light);
+        }
+        footer .copyright {
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-color-light);
+        }
+
+        /* --- Responsive Adjustments --- */
+        @media (max-width: 992px) {
+            .hero h1 { font-size: 3rem; }
+            section { padding: 80px 0; }
+        }
+
+        @media (max-width: 768px) {
+            body { padding-top: 67px; }
+            section { scroll-margin-top: 67px; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero .lead { font-size: 1.1rem; }
+            h2.section-title { font-size: 1.8rem; }
+        }
+
+        @media (max-width: 576px) {
+            .hero .btn-group-lg {
+                display: flex;
+                flex-direction: column;
+            }
+            .hero .btn-group-lg > .btn {
+                margin-bottom: 10px;
+                width: 100%;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            }
+        }
+    </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: var(--primary);">
+    <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#">Deep Patel</a>
+            <a class="navbar-brand" href="#">Deep Patel</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -28,103 +304,127 @@
         </div>
     </nav>
 
-    <section class="hero">
+    <section id="hero" class="hero border-bottom-0">
         <div class="container">
-            <h1 class="display-4 mb-3">Deep Patel</h1>
-            <p class="lead mb-4">AI/ML Engineer | LLM & NLP Specialist | GenAI Developer</p>
-            <p class="text-white-50">M.S. in Computer Science @ University of Oklahoma | Based in Seattle, WA</p>
-            <div class="mt-4">
-                <a href="https://github.com/deeppatel1842" target="_blank" class="btn btn-light btn-lg mx-2">
+            <h1>Deep Patel</h1>
+            <p class="lead">AI/ML Engineer | LLM & NLP Specialist | GenAI Developer</p>
+            <div class="btn-group-lg mt-4" role="group">
+                <a href="https://github.com/deeppatel1842" target="_blank" class="btn btn-outline-dark mx-2">
                     <i class="fab fa-github"></i> GitHub
                 </a>
-                <a href="https://www.linkedin.com/in/deeppatel1842/" target="_blank" class="btn btn-light btn-lg mx-2">
+                <a href="https://www.linkedin.com/in/deeppatel1842/" target="_blank" class="btn btn-outline-dark mx-2">
                     <i class="fab fa-linkedin"></i> LinkedIn
                 </a>
-                <a href="Deep_Resume.pdf" target="_blank" class="btn btn-light btn-lg mx-2">
+                <a href="Deep_Resume.pdf" target="_blank" class="btn btn-outline-dark mx-2">
                     <i class="fas fa-file-pdf"></i> Resume
                 </a>
             </div>
         </div>
     </section>
 
-    <section id="about" class="py-5">
+    <section id="about">
         <div class="container text-center">
             <h2 class="section-title">About Me</h2>
             <div class="row justify-content-center">
                 <div class="col-lg-8">
-                    <p class="lead">
-                        I’m a passionate AI/ML Engineer specializing in <strong>LLM fine-tuning</strong>, <strong>retrieval-augmented generation (RAG)</strong>, and <strong>scalable NLP infrastructure</strong>. With hands-on experience building and deploying end-to-end GenAI systems, I focus on transforming raw data into intelligent, real-world applications.
+                    <p>
+                        I’m a passionate AI/ML Engineer specializing in LLM fine-tuning, retrieval-augmented generation (RAG), and scalable NLP infrastructure. With hands-on experience building and deploying end-to-end GenAI systems, I focus on transforming raw data into intelligent, real-world applications.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="projects" class="py-5 bg-light">
+    <section id="projects">
         <div class="container">
             <h2 class="text-center section-title">Featured Projects</h2>
             <div class="row">
-                <div class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch">
+                <div class="col-lg-4 col-md-6 col-12 mb-4 d-flex align-items-stretch">
                     <div class="card project-card h-100 w-100">
+                        <img src="neurodoc.jpg" class="card-img-top" alt="NeuroDoc Project Screenshot">
                         <div class="card-body">
-                            <h5 class="card-title fw-bold">🧠 NeuroDoc: Multi-Document RAG Assistant</h5>
+                            <h5 class="card-title">🧠 NeuroDoc: RAG Assistant</h5>
                             <p class="card-text">A context-aware document assistant with real-time PDF querying, citation-based reranking, and session memory.</p>
-                            <div class="project-tags mb-3">
-                                <span class="badge">RAG</span><span class="badge">FAISS</span><span class="badge">BM25</span><span class="badge">Reranking</span><span class="badge">FastAPI</span>
+                            <div class="project-tags">
+                                <span class="badge">RAG</span><span class="badge">FAISS</span><span class="badge">BM25</span><span class="badge">FastAPI</span>
                             </div>
-                            <a href="https://github.com/deeppatel1842/NeuroDoc" target="_blank" class="btn btn-accent mt-auto"><i class="fab fa-github"></i> View on GitHub</a>
+                        </div>
+                        <div class="card-footer">
+                            <a href="https://github.com/deeppatel1842/NeuroDoc" target="_blank" class="github-link">
+                                <i class="fab fa-github"></i> View on GitHub
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch">
+                <div class="col-lg-4 col-md-6 col-12 mb-4 d-flex align-items-stretch">
                     <div class="card project-card h-100 w-100">
+                        <img src="visualens.jpg" class="card-img-top" alt="VisuaLens Project Screenshot">
                         <div class="card-body">
-                            <h5 class="card-title fw-bold">👀 VisuaLens: Multimodal LLM System</h5>
+                            <h5 class="card-title">👀 VisuaLens: Multimodal LLM</h5>
                             <p class="card-text">A LLaVA-powered multimodal system for comparing charts, UIs, and images with visual-textual alignment.</p>
-                            <div class="project-tags mb-3">
+                            <div class="project-tags">
                                 <span class="badge">LLaVA</span><span class="badge">Visual Reasoning</span><span class="badge">Quantization</span>
                             </div>
-                            <a href="https://github.com/deeppatel1842/VisuaLens" target="_blank" class="btn btn-accent mt-auto"><i class="fab fa-github"></i> View on GitHub</a>
+                        </div>
+                         <div class="card-footer">
+                            <a href="https://github.com/deeppatel1842/VisuaLens" target="_blank" class="github-link">
+                                <i class="fab fa-github"></i> View on GitHub
+                            </a>
                         </div>
                     </div>
                 </div>
                 
-                <div class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch">
+                <div class="col-lg-4 col-md-6 col-12 mb-4 d-flex align-items-stretch">
                     <div class="card project-card h-100 w-100">
+                        <img src="book-recommender.jpg" class="card-img-top" alt="Book Recommender Project Screenshot">
                         <div class="card-body">
-                            <h5 class="card-title fw-bold">📚 Semantic Book Recommender</h5>
+                            <h5 class="card-title">📚 Book Recommender</h5>
                             <p class="card-text">Personalized book recommendations via semantic and emotional understanding using Sentence Transformers.</p>
-                            <div class="project-tags mb-3">
-                                <span class="badge">Sentence Transformers</span><span class="badge">DistilRoBERTa</span><span class="badge">Gradio</span>
+                            <div class="project-tags">
+                                <span class="badge">Sentence Transformers</span><span class="badge">Gradio</span>
                             </div>
-                            <a href="https://github.com/deeppatel1842/book_recommendation_LLM" target="_blank" class="btn btn-accent mt-auto"><i class="fab fa-github"></i> View on GitHub</a>
+                        </div>
+                         <div class="card-footer">
+                            <a href="https://github.com/deeppatel1842/book_recommendation_LLM" target="_blank" class="github-link">
+                                <i class="fab fa-github"></i> View on GitHub
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch">
+                <div class="col-lg-4 col-md-6 col-12 mb-4 d-flex align-items-stretch">
                     <div class="card project-card h-100 w-100">
+                        <img src="ecoassist.jpg" class="card-img-top" alt="EcoAssist Project Screenshot">
                         <div class="card-body">
-                            <h5 class="card-title fw-bold">💬 EcoAssist: RAG E-Commerce Chatbot</h5>
-                            <p class="card-text">A domain-specific AI chatbot for e-commerce query resolution with real-time product lookup and fine-tuned LLMs.</p>
-                            <div class="project-tags mb-3">
-                                <span class="badge">GPT/LLaMA</span><span class="badge">FAISS</span><span class="badge">LoRA</span><span class="badge">FastAPI</span><span class="badge">AWS Lambda</span>
+                            <h5 class="card-title">💬 EcoAssist: E-Commerce Chatbot</h5>
+                            <p class="card-text">A domain-specific AI chatbot for e-commerce with real-time product lookup and fine-tuned LLMs.</p>
+                            <div class="project-tags">
+                                <span class="badge">GPT/LLaMA</span><span class="badge">LoRA</span><span class="badge">AWS Lambda</span>
                             </div>
-                            <a href="https://github.com/deeppatel1842/ecom-chatbot" target="_blank" class="btn btn-accent mt-auto"><i class="fab fa-github"></i> View on GitHub</a>
+                        </div>
+                         <div class="card-footer">
+                            <a href="https://github.com/deeppatel1842/ecom-chatbot" target="_blank" class="github-link">
+                                <i class="fab fa-github"></i> View on GitHub
+                            </a>
                         </div>
                     </div>
                 </div>
-                
-                <div class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch">
+
+                <div class="col-lg-4 col-md-6 col-12 mb-4 d-flex align-items-stretch">
                     <div class="card project-card h-100 w-100">
+                        <img src="ezyshop.jpg" class="card-img-top" alt="EzyShop Project Screenshot">
                         <div class="card-body">
-                            <h5 class="card-title fw-bold">🛒 EzyShop: Full-Stack E-Commerce Platform</h5>
-                            <p class="card-text">A responsive e-commerce site with secure login, dynamic cart, real-time order tracking, and modular REST APIs.</p>
-                            <div class="project-tags mb-3">
-                                <span class="badge">Python</span><span class="badge">SQL</span><span class="badge">REST API</span><span class="badge">HTML/CSS</span><span class="badge">Auth</span>
+                            <h5 class="card-title">🛒 EzyShop: E-Commerce Platform</h5>
+                            <p class="card-text">A responsive e-commerce site with secure login, dynamic cart, order tracking, and modular REST APIs.</p>
+                            <div class="project-tags">
+                                <span class="badge">Python</span><span class="badge">SQL</span><span class="badge">REST API</span><span class="badge">HTML/CSS</span>
                             </div>
-                            <a href="https://github.com/deeppatel1842/online-shopping-website" target="_blank" class="btn btn-accent mt-auto"><i class="fab fa-github"></i> View on GitHub</a>
+                        </div>
+                         <div class="card-footer">
+                            <a href="https://github.com/deeppatel1842/online-shopping-website" target="_blank" class="github-link">
+                                <i class="fab fa-github"></i> View on GitHub
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -132,81 +432,89 @@
         </div>
     </section>
 
-    <section id="skills" class="py-5">
+    <section id="skills">
         <div class="container text-center">
-            <h2 class="section-title">Technical Arsenal</h2>
-            <div class="row">
-                <div class="col-md-6 col-lg-4 skill-category">
-                    <h4>Languages & Frameworks</h4>
-                    <span class="skill-badge">Python</span>
-                    <span class="skill-badge">Java</span>
-                    <span class="skill-badge">SQL</span>
-                    <span class="skill-badge">PyTorch</span>
-                    <span class="skill-badge">TensorFlow</span>
-                    <span class="skill-badge">scikit-learn</span>
-                </div>
-                <div class="col-md-6 col-lg-4 skill-category">
-                    <h4>NLP & LLMs</h4>
-                    <span class="skill-badge">Hugging Face</span>
-                    <span class="skill-badge">LangChain</span>
-                    <span class="skill-badge">FAISS</span>
-                    <span class="skill-badge">RAG</span>
-                    <span class="skill-badge">LLM Fine-Tuning</span>
-                    <span class="badge text-bg-dark m-1 p-2">GPT</span>
-                    <span class="badge text-bg-dark m-1 p-2">LLaMA</span>
-                    <span class="badge text-bg-dark m-1 p-2">BERT</span>
-                </div>
-                <div class="col-md-12 col-lg-4 skill-category">
-                    <h4>MLOps & Deployment</h4>
-                    <span class="skill-badge">Docker</span>
-                    <span class="skill-badge">FastAPI</span>
-                    <span class="skill-badge">AWS Lambda</span>
-                    <span class="skill-badge">Firebase</span>
-                    <span class="skill-badge">CI/CD</span>
-                    <span class="skill-badge">Git</span>
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="skill-category">
+                        <h4>Programming & Data</h4>
+                        <div class="skill-badges-container">
+                            <span class="skill-badge">Python</span><span class="skill-badge">Java</span><span class="skill-badge">SQL</span><span class="skill-badge">OOP</span><span class="skill-badge">Data Structures & Algorithms</span><span class="skill-badge">RESTful APIs</span><span class="skill-badge">Pandas</span><span class="skill-badge">NumPy</span><span class="skill-badge">PostgreSQL</span><span class="skill-badge">MySQL</span><span class="skill-badge">DynamoDB</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>ML & Deep Learning</h4>
+                        <div class="skill-badges-container">
+                            <span class="skill-badge">Supervised & Unsupervised Learning</span><span class="skill-badge">Regression</span><span class="skill-badge">Classification (Random Forest, XGBoost)</span><span class="skill-badge">Clustering (K-Means)</span><span class="skill-badge">Feature Engineering</span><span class="skill-badge">PyTorch</span><span class="skill-badge">TensorFlow</span><span class="skill-badge">OpenCV</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>NLP & LLMs</h4>
+                        <div class="skill-badges-container">
+                           <span class="skill-badge">Hugging Face Transformers</span><span class="skill-badge">RAG Pipelines</span><span class="skill-badge">LoRA/QLoRA</span><span class="skill-badge">LangChain</span><span class="skill-badge">LangGraph</span><span class="skill-badge">Vector DBs (FAISS, Pinecone)</span><span class="skill-badge">GPT</span><span class="skill-badge">LLaMA</span><span class="skill-badge">Mistral</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>MLOps, Cloud & DevOps</h4>
+                        <div class="skill-badges-container">
+                            <span class="skill-badge">AWS (S3, Lambda, EC2)</span><span class="skill-badge">Docker</span><span class="skill-badge">Kubernetes</span><span class="skill-badge">FastAPI</span><span class="skill-badge">CI/CD</span><span class="skill-badge">MLflow</span><span class="skill-badge">Weights & Biases</span><span class="skill-badge">Git</span><span class="skill-badge">Linux CLI</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="certifications" class="py-5 bg-light">
+    <section id="certifications">
         <div class="container">
             <h2 class="text-center section-title">Certifications</h2>
             <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item bg-light"><i class="fas fa-robot me-3"></i>Generative AI with LLMs – DeepLearning.AI</li>
-                        <li class="list-group-item bg-light"><i class="fas fa-comments me-3"></i>NLP with Transformers – Hugging Face</li>
-                        <li class="list-group-item bg-light"><i class="fas fa-brain me-3"></i>Fundamentals of Deep Learning – NVIDIA DLI</li>
-                        <li class="list-group-item bg-light"><i class="fas fa-cogs me-3"></i>Transformer-Based NLP Applications – NVIDIA DLI</li>
-                    </ul>
+                <div class="col-md-9">
+                    <div class="cert-item"><i class="fas fa-robot"></i> Generative AI with LLMs – DeepLearning.AI</div>
+                    <div class="cert-item"><i class="fas fa-comments"></i> NLP with Transformers – Hugging Face</div>
+                    <div class="cert-item"><i class="fas fa-brain"></i> Fundamentals of Deep Learning – NVIDIA DLI</div>
+                    <div class="cert-item"><i class="fas fa-cogs"></i> Transformer-Based NLP Applications – NVIDIA DLI</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="py-5">
-        <div class="container text-center">
-            <h2 class="section-title">Let's Connect</h2>
+    <section id="contact">
+        <div class="container">
+            <h2 class="text-center section-title">Let's Connect</h2>
             <div class="row justify-content-center">
                 <div class="col-lg-6">
-                    <p class="lead mb-4">If you're building impactful AI systems or looking to collaborate — I’d love to chat!</p>
-                    <div class="card">
-                        <div class="card-body">
-                            <p><i class="fas fa-envelope me-2"></i><a href="mailto:pateldeep1842@gmail.com">pateldeep1842@gmail.com</a></p>
-                            <p><i class="fas fa-map-marker-alt me-2"></i>Seattle, WA, USA</p>
+                    <form action="https://formspree.io/f/YOUR_UNIQUE_ID" method="POST">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
                         </div>
-                    </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="your@email.com" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" name="message" rows="5" placeholder="Your message..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-outline-dark btn-lg">Send Message</button>
+                    </form>
+                    <p class="text-center direct-email">
+                        Or, email me directly at <a href="mailto:pateldeep1842@gmail.com">pateldeep1842@gmail.com</a>
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="text-center">
+    <footer id="footer">
         <div class="container">
-            <a href="https://github.com/deeppatel1842" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/deeppatel1842/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <p class="mt-3 mb-0">&copy; 2025 Deep Patel. All Rights Reserved.</p>
+            <div class="social-links">
+                <a href="https://github.com/deeppatel1842" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/deeppatel1842/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <p class="copyright">&copy; 2025 Deep Patel. All Rights Reserved.</p>
         </div>
     </footer>
 
