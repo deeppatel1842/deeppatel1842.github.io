@@ -54,33 +54,41 @@
         }
         
         h2.section-title {
-            font-weight: 600;
-            font-size: 2.2rem;
+            font-weight: 700;
+            font-size: 2.5rem;
             margin-bottom: 4rem;
         }
 
-        /* Navbar */
+        /* --- Navbar --- */
         .navbar {
-            background-color: var(--bg-color) !important;
+            background-color: rgba(30, 30, 30, 0.85) !important; /* Semi-transparent dark background */
+            backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border-color);
             padding: 1rem 0;
         }
         .navbar-brand {
-            font-weight: 600;
+            font-weight: 700;
             font-size: 1.5rem;
             color: var(--text-color) !important;
         }
         .navbar-nav .nav-link {
-            color: var(--text-color) !important;
+            color: var(--text-color-secondary) !important;
             font-weight: 500;
             margin: 0 10px;
             transition: color 0.3s ease;
         }
-        .navbar-nav .nav-link:hover {
-            color: var(--text-color-light) !important;
+        .navbar-nav .nav-link:hover, .navbar-nav .nav-link.active {
+            color: var(--text-color) !important;
+        }
+        .navbar-toggler {
+            border-color: var(--border-color);
+        }
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28224, 224, 224, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
         }
 
-        /* Hero Section */
+
+        /* --- Hero Section --- */
         .hero {
             background: var(--bg-color);
             color: var(--text-color);
@@ -89,53 +97,57 @@
         }
         .hero h1 {
             font-weight: 700;
-            font-size: 3.5rem;
+            font-size: 3.8rem;
             margin-bottom: 1rem;
         }
         .hero .lead {
-            font-size: 1.2rem;
-            color: var(--text-color-light);
-            max-width: 600px;
+            font-size: 1.25rem;
+            color: var(--text-color-secondary);
+            max-width: 650px;
             margin: 0 auto 2.5rem auto;
         }
-        .hero .btn-outline-dark {
+        .hero .btn {
             font-weight: 500;
-            padding: 10px 24px;
+            padding: 12px 28px;
             border-radius: 8px;
-            border-color: var(--border-color);
+            border-width: 2px;
             transition: all 0.3s ease;
         }
-        .hero .btn-outline-dark:hover {
+        .hero .btn-outline-light {
+            border-color: var(--border-color);
+            color: var(--text-color);
+        }
+        .hero .btn-outline-light:hover {
             background-color: var(--text-color);
             color: var(--bg-color);
         }
 
-        /* About Section */
+        /* --- About Section --- */
         #about p {
-            font-size: 1.1rem;
-            color: var(--text-color-light);
-            max-width: 700px;
+            font-size: 1.15rem;
+            color: var(--text-color-secondary);
+            max-width: 750px;
             margin: 0 auto;
         }
 
-        /* Project Cards */
+        /* --- Project Cards (New Design) --- */
         .project-card {
-            background-color: var(--bg-color);
+            background: var(--primary-surface-color);
             border: 1px solid var(--border-color);
             border-radius: 12px;
-            transition: border-color 0.3s ease, transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden; /* Ensures child elements conform to border-radius */
             display: flex;
             flex-direction: column;
         }
         .project-card:hover {
-            border-color: var(--text-color);
-            transform: translateY(-5px);
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
         }
         .project-card .card-img-top {
             aspect-ratio: 16 / 9;
             object-fit: cover;
-            border-top-left-radius: 11px;
-            border-top-right-radius: 11px;
+            border-bottom: 1px solid var(--border-color);
         }
         .project-card .card-body {
             padding: 25px;
@@ -144,24 +156,30 @@
             flex-grow: 1;
         }
         .project-card .card-title {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             margin-bottom: 0.75rem;
+            color: var(--text-color);
         }
         .project-card .card-text {
-            color: var(--text-color-light);
+            color: var(--text-color-secondary);
             flex-grow: 1;
             margin-bottom: 1.5rem;
         }
+        .project-tags {
+            margin-bottom: 1.5rem;
+        }
         .project-tags .badge {
-            background-color: var(--light-gray-bg);
-            color: var(--text-color-light);
+            background-color: var(--secondary-surface-color);
+            color: var(--text-color-secondary);
             font-weight: 500;
             padding: 8px 12px;
             border-radius: 6px;
-            border: 1px solid var(--border-color);
+            margin-right: 5px;
+            margin-bottom: 5px;
+            display: inline-block;
         }
         .project-card .card-footer {
-            background: none;
+            background: var(--primary-surface-color);
             border-top: 1px solid var(--border-color);
             padding: 1rem 1.5rem;
         }
@@ -172,7 +190,7 @@
             transition: color 0.3s ease;
         }
         .project-card .github-link:hover {
-            color: var(--text-color-light);
+            color: var(--accent-color);
         }
         
         /* Skills Section */
