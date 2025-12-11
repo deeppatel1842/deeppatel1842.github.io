@@ -87,7 +87,6 @@
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28224, 224, 224, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
         }
 
-
         /* --- Hero Section --- */
         .hero {
             background: var(--bg-color);
@@ -134,13 +133,48 @@
             margin: 0 auto;
         }
 
-        /* --- Project Cards (New Design) --- */
+        /* --- Experience Section --- */
+        .experience-item {
+            margin-bottom: 2.5rem;
+        }
+        .experience-item h4 {
+            font-size: 1.25rem;
+            margin-bottom: 0.25rem;
+        }
+        .experience-meta {
+            color: var(--text-color-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+        .experience-item ul {
+            padding-left: 1.2rem;
+            margin-bottom: 0;
+            color: var(--text-color-secondary);
+        }
+        .experience-item ul li {
+            margin-bottom: 0.3rem;
+        }
+
+        /* --- Education Section --- */
+        .education-item {
+            margin-bottom: 1.8rem;
+        }
+        .education-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.25rem;
+        }
+        .education-meta {
+            color: var(--text-color-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* --- Project Cards --- */
         .project-card {
             background: var(--primary-surface-color);
             border: 1px solid var(--border-color);
             border-radius: 12px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            overflow: hidden; /* Ensures child elements conform to border-radius */
+            overflow: hidden;
             display: flex;
             flex-direction: column;
         }
@@ -359,6 +393,8 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
                     <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
                     <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
                     <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
@@ -371,7 +407,7 @@
     <section id="hero" class="hero border-bottom-0">
         <div class="container">
             <h1>Deep Patel</h1>
-            <p class="lead">AI/ML Engineer | LLM & NLP Specialist | GenAI Developer</p>
+            <p class="lead">AI/ML Engineer · LLM & RAG Specialist · GenAI Infrastructure</p>
             <div class="btn-group-lg mt-4" role="group">
                 <a href="https://github.com/deeppatel1842" target="_blank" class="btn btn-outline-dark mx-2">
                     <i class="fab fa-github"></i> GitHub
@@ -392,8 +428,74 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <p>
-                        I’m a passionate AI/ML Engineer specializing in LLM fine-tuning, retrieval-augmented generation (RAG), and scalable NLP infrastructure. With hands-on experience building and deploying end-to-end GenAI systems, I focus on transforming raw data into intelligent, real-world applications.
+                        I’m an AI/ML Engineer with an M.S. in Computer Science from the University of Oklahoma, specializing in fine-tuning large language models (LLMs), Retrieval-Augmented Generation (RAG), and scalable ML systems. I build production-grade GenAI applications by combining LLM optimization (LoRA, QLoRA, 4-bit inference) with strong engineering foundations in PyTorch, Hugging Face, FastAPI, Docker, and AWS.
                     </p>
+                    <p class="mt-3">
+                        My work spans multi-document RAG assistants, multimodal reasoning systems, and high-performance backends for data-heavy applications—always with a focus on measurable impact: higher relevance, lower latency, and more reliable ML in production.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title text-center">Experience</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-9">
+                    <div class="experience-item">
+                        <h4>Machine Learning Engineer · Community Dreams Foundation</h4>
+                        <div class="experience-meta">Remote, USA · Aug 2025 – Present</div>
+                        <ul>
+                            <li>Managed the full ML lifecycle (requirements → modeling → evaluation), improving predictive performance by 22%.</li>
+                            <li>Built Python + SQL pipelines for automated data ingestion and preprocessing, increasing dataset consistency.</li>
+                            <li>Analyzed large community-impact datasets, extracting insights that improved model reliability by 30%.</li>
+                        </ul>
+                    </div>
+                    <div class="experience-item">
+                        <h4>Founding Machine Learning Engineer · TripRaft</h4>
+                        <div class="experience-meta">Remote, USA · May 2025 – Aug 2025</div>
+                        <ul>
+                            <li>Defined scalable backend architecture for itinerary planning, reducing API latency by 30% through query optimization and caching.</li>
+                            <li>Shipped secure data schemas and REST APIs for collaboration, voting, and expense-sharing workflows.</li>
+                            <li>Added ML personalization using vector search and ranking models, boosting trip discovery relevance by 18%.</li>
+                        </ul>
+                    </div>
+                    <div class="experience-item">
+                        <h4>AI/ML Engineer · Firenix Technologies</h4>
+                        <div class="experience-meta">India · Mar 2021 – Jul 2023</div>
+                        <ul>
+                            <li>Delivered PyTorch models for real-time classification, reducing prediction errors by 28% in production systems.</li>
+                            <li>Accelerated inference by 40% using ONNX export and 8-bit optimization for edge deployments.</li>
+                            <li>Developed end-to-end ML pipelines with preprocessing, inference services, and Dockerized FastAPI APIs.</li>
+                        </ul>
+                    </div>
+                    <div class="experience-item mb-0">
+                        <h4>ML Research Intern · IIIT Vadodara</h4>
+                        <div class="experience-meta">India · Aug 2020 – Dec 2020</div>
+                        <ul>
+                            <li>Achieved 82% accuracy on Alzheimer’s detection using a custom CNN trained on 492 PET scans.</li>
+                            <li>Improved robustness using neuroimaging-specific data augmentations and cleaned preprocessing pipelines.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="container text-center">
+            <h2 class="section-title">Education</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="education-item">
+                        <h4>M.S. in Computer Science</h4>
+                        <div class="education-meta">University of Oklahoma · Norman, OK · Aug 2023 – May 2025</div>
+                    </div>
+                    <div class="education-item mb-0">
+                        <h4>B.Tech in Computer Science and Engineering</h4>
+                        <div class="education-meta">Indian Institute of Information Technology (IIIT) · Gujarat, India · Aug 2018 – May 2022</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -408,7 +510,9 @@
                         <img src="neurodoc.png" class="card-img-top" alt="NeuroDoc Project Screenshot">
                         <div class="card-body">
                             <h5 class="card-title">🧠 NeuroDoc: RAG Assistant</h5>
-                            <p class="card-text">A context-aware document assistant with real-time PDF querying, citation-based reranking, and session memory.</p>
+                            <p class="card-text">
+                                A multi-document RAG assistant using FAISS + BM25 hybrid retrieval, conversational memory, and citation-grounded responses with 18% improved precision.
+                            </p>
                             <div class="project-tags">
                                 <span class="badge">RAG</span><span class="badge">FAISS</span><span class="badge">BM25</span><span class="badge">FastAPI</span>
                             </div>
@@ -425,7 +529,9 @@
                         <img src="visual.png" class="card-img-top" alt="VisuaLens Project Screenshot">
                         <div class="card-body">
                             <h5 class="card-title">👀 VisuaLens: Multimodal LLM</h5>
-                            <p class="card-text">A LLaVA-powered multimodal system for comparing charts, UIs, and images with visual-textual alignment.</p>
+                            <p class="card-text">
+                                A LLaVA-powered multimodal system for visual–text reasoning, dual-image comparison, and analysis with 4-bit quantized inference for efficient local deployment.
+                            </p>
                             <div class="project-tags">
                                 <span class="badge">LLaVA</span><span class="badge">Visual Reasoning</span><span class="badge">Quantization</span>
                             </div>
@@ -441,8 +547,10 @@
                     <div class="card project-card h-100 w-100">
                         <img src="book.png" class="card-img-top" alt="Book Recommender Project Screenshot">
                         <div class="card-body">
-                            <h5 class="card-title">📚 Book Recommender</h5>
-                            <p class="card-text">Personalized book recommendations via semantic and emotional understanding using Sentence Transformers.</p>
+                            <h5 class="card-title">📚 Semantic Book Recommender</h5>
+                            <p class="card-text">
+                                Personalized book recommendations via semantic and emotional understanding using Sentence Transformers and an interactive Gradio interface.
+                            </p>
                             <div class="project-tags">
                                 <span class="badge">Sentence Transformers</span><span class="badge">Gradio</span>
                             </div>
@@ -459,7 +567,9 @@
                         <img src="chat.png" class="card-img-top" alt="EcoAssist Project Screenshot">
                         <div class="card-body">
                             <h5 class="card-title">💬 EcoAssist: E-Commerce Chatbot</h5>
-                            <p class="card-text">A domain-specific AI chatbot for e-commerce with real-time product lookup and fine-tuned LLMs.</p>
+                            <p class="card-text">
+                                A domain-specific AI chatbot for e-commerce with fine-tuned GPT/LLaMA models, product-aware RAG, and real-time query resolution.
+                            </p>
                             <div class="project-tags">
                                 <span class="badge">GPT/LLaMA</span><span class="badge">LoRA</span><span class="badge">AWS Lambda</span>
                             </div>
@@ -476,7 +586,9 @@
                         <img src="shop.png" class="card-img-top" alt="EzyShop Project Screenshot">
                         <div class="card-body">
                             <h5 class="card-title">🛒 EzyShop: E-Commerce Platform</h5>
-                            <p class="card-text">A responsive e-commerce site with secure login, dynamic cart, order tracking, and modular REST APIs.</p>
+                            <p class="card-text">
+                                A full-stack e-commerce platform with secure auth, dynamic cart and order workflows, and optimized Python + SQL backend with 25% faster DB performance.
+                            </p>
                             <div class="project-tags">
                                 <span class="badge">Python</span><span class="badge">SQL</span><span class="badge">REST API</span><span class="badge">HTML/CSS</span>
                             </div>
@@ -531,10 +643,10 @@
             <h2 class="text-center section-title">Certifications</h2>
             <div class="row justify-content-center">
                 <div class="col-md-9">
-                    <div class="cert-item"><i class="fas fa-robot"></i> Generative AI with LLMs – DeepLearning.AI</div>
-                    <div class="cert-item"><i class="fas fa-comments"></i> NLP with Transformers – Hugging Face</div>
-                    <div class="cert-item"><i class="fas fa-brain"></i> Fundamentals of Deep Learning – NVIDIA DLI</div>
-                    <div class="cert-item"><i class="fas fa-cogs"></i> Transformer-Based NLP Applications – NVIDIA DLI</div>
+                    <div class="cert-item"><i class="fas fa-robot"></i> Generative AI with Large Language Models – DeepLearning.AI</div>
+                    <div class="cert-item"><i class="fas fa-comments"></i> Natural Language Processing with Transformers – Hugging Face</div>
+                    <div class="cert-item"><i class="fas fa-cogs"></i> Building Transformer-Based NLP Applications – NVIDIA Deep Learning Institute</div>
+                    <div class="cert-item"><i class="fas fa-brain"></i> Fundamentals of Deep Learning – NVIDIA Deep Learning Institute</div>
                 </div>
             </div>
         </div>
